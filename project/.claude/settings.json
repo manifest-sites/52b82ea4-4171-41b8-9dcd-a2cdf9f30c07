@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(npm:*)",
+      "Edit",
+      "Read",
+      "Write",
+      "Create",
+      "Update",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+      "Bash(yarn:*)",
+      "Bash(pnpm:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run start:*)",
+      "mcp__puppeteer__*"
+    ],
+    "deny": []
+  }
+}

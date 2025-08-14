@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Callback</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .message {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+    <script src="/apiConfig.js"></script>
+</head>
+<body>
+    <div class="message">
+        <h2>Processing authentication...</h2>
+        <p>This window will close automatically.</p>
+    </div>
+
+    <script>
+        (async function() {
+            console.log('Auth callback page loaded');
+            
+            // Since the user always ends up logged in, we'll assume success
+            // and let the parent window refresh to check the actual auth status
+            setTimeout(() => {
+                console.log('Sending auth success message');
+                window.opener.postMessage({
+                    type: 'GOOGLE_AUTH_SUCCESS'
+                }, window.location.origin);
+                
+                // Close the popup
+                setTimeout(() => {
+                    window.close();
+                }, 500);
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>
