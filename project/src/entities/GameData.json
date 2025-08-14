@@ -1,0 +1,69 @@
+{
+  "name": "GameData",
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "string",
+      "description": "User identifier for the game save"
+    },
+    "points": {
+      "type": "number",
+      "description": "Current lizard points accumulated"
+    },
+    "totalClicks": {
+      "type": "number",
+      "description": "Total number of clicks made"
+    },
+    "clickPower": {
+      "type": "number",
+      "description": "Points earned per click"
+    },
+    "autoClickerCount": {
+      "type": "number",
+      "description": "Number of auto-clickers owned"
+    },
+    "autoClickerPower": {
+      "type": "number",
+      "description": "Points per second from auto-clickers"
+    },
+    "upgrades": {
+      "type": "object",
+      "description": "Object containing purchased upgrade levels",
+      "properties": {
+        "clickMultiplier": {
+          "type": "number",
+          "description": "Level of click multiplier upgrade"
+        },
+        "autoClickerEfficiency": {
+          "type": "number",
+          "description": "Level of auto-clicker efficiency upgrade"
+        },
+        "goldenLizard": {
+          "type": "number", 
+          "description": "Level of golden lizard upgrade"
+        },
+        "megaClicks": {
+          "type": "number",
+          "description": "Level of mega clicks upgrade"
+        }
+      }
+    },
+    "achievements": {
+      "type": "array",
+      "description": "Array of unlocked achievement IDs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lastSaved": {
+      "type": "string",
+      "description": "ISO string of last save timestamp"
+    }
+  },
+  "required": [
+    "userId",
+    "points", 
+    "totalClicks",
+    "clickPower"
+  ]
+}
